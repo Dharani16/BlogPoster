@@ -1,32 +1,48 @@
 import React, { Component } from 'react';
-import {Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 import './App.css';
+import{BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import {Home} from './components/Home';
+import {About} from './components/About';
+import {Contact} from './components/Contact';
+import {NewPost} from './components/NewPost';
+import {Readmore} from './components/Readmore';
 
 class App extends Component {
   render() {
     return (
-      <div>
-          <ul className="header">
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">About</a></li>
-            <li> <a href="#">Contact</a></li>
-            <li> <a href="#">New Post</a></li>
-          </ul>
-      </div>
+      <Router>
+        <div className="container">         
+          <nav className="navbar navbar-default">
+            <div className="container">
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>                        
+                </button>
+              </div>
+              <div className="collapse navbar-collapse" id="myNavbar">
+                <div className="col-lg-10 col-lg-offset-4">
+                <ul className="nav navbar-nav">
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about">About us</Link></li>
+                  <li><Link to="/contact">Contact us</Link></li>
+                  <li><Link to="/newpost">New Post</Link></li>
+                </ul> 
+                </div>                   
+              </div>
+              </div>  
+              <hr/>
+              <Route exact path ="/" component={Home}/>
+              <Route path ="/about" component={About}/>
+              <Route path ="/contact" component={Contact}/>
+              <Route path ="/newpost" component={NewPost}/>            
+          </nav>
+        </div> 
+      </Router>        
     );
   }
 }
 
 export default App;
-
-class Home extends Component{
-  render(){
-    return(
-      <div>
-        <h2>Homepage</h2>
-      </div>
-    )
-  }
-}
-export default Home;
 

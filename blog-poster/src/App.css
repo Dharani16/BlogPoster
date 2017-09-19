@@ -22,19 +22,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.header{
-  background-color: #c1b6b6;
-  padding: 10px 20px 10px 20px; 
+.navbar-default{
+  background-color: #FFFFFF;
 }
-
-.header li{
-  display: inline;
-  list-style-type: none;
-  margin: 0;
+.btReadMore{
+  padding: 10px;
+  background-color: #efecec;
+  color: #320E0E;
+  width: 100px;
+  margin-left: 20px;
 }
-.header li a{
-  text-decoration: none;
+.btReadMore:hover{
   cursor: pointer;
-  padding-right: 20px;
+  border:1px solid black;
+}
+.blogTitle{
+  margin-left: 20px;
 }
