@@ -9,9 +9,9 @@ import {Readmore} from './components/Readmore';
 
 class App extends Component {
   render() {
-    return (
-      <Router>
-        <div className="container">         
+    return (      
+      <div className="container">
+        <Router>         
           <nav className="navbar navbar-default">
             <div className="container">
               <div className="navbar-header">
@@ -23,12 +23,12 @@ class App extends Component {
               </div>
               <div className="collapse navbar-collapse" id="myNavbar">
                 <div className="col-lg-10 col-lg-offset-4">
-                <ul className="nav navbar-nav">
-                  <li><Link to="/">Home</Link></li>
-                  <li><Link to="/about">About us</Link></li>
-                  <li><Link to="/contact">Contact us</Link></li>
-                  <li><Link to="/newpost">New Post</Link></li>
-                </ul> 
+                  <ul className="nav navbar-nav">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About us</Link></li>
+                    <li><Link to="/contact">Contact us</Link></li>
+                    <li><Link to="/newpost">New Post</Link></li>                  
+                  </ul> 
                 </div>                   
               </div>
               </div>  
@@ -37,9 +37,9 @@ class App extends Component {
               <Route path ="/about" component={About}/>
               <Route path ="/contact" component={Contact}/>
               <Route path ="/newpost" component={NewPost}/>            
-          </nav>
-        </div> 
-      </Router>        
+          </nav>        
+        </Router>        
+      </div>        
     );
   }
 }
