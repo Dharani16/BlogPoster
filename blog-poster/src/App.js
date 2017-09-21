@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import{BrowserRouter as Router,Route,Link} from 'react-router-dom';
-import {Home} from './components/Home';
+import {PostContainer} from './components/PostContainer';
 import {About} from './components/About';
 import {Contact} from './components/Contact';
 import {NewPost} from './components/NewPost';
@@ -33,10 +33,11 @@ class App extends Component {
               </div>
               </div>  
               <hr/>
-              <Route exact path ="/" component={Home}/>
+              <Route exact path ="/" component={PostContainer}/>
               <Route path ="/about" component={About}/>
               <Route path ="/contact" component={Contact}/>
-              <Route path ="/newpost" component={NewPost}/>            
+              <Route path ="/newpost" component={NewPost}/>  
+              <Route path ="/readmore/:id" component={Readmore}/>          
           </nav>        
         </Router>        
       </div>        
