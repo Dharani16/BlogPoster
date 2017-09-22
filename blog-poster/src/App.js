@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (      
       <div className="container">
-        <Router>         
+        <Router>                
           <nav className="navbar navbar-default">
             <div className="container">
               <div className="navbar-header">
@@ -37,7 +37,7 @@ class App extends Component {
               <Route path ="/about" component={About}/>
               <Route path ="/contact" component={Contact}/>
               <Route path ="/newpost" component={NewPost}/>  
-              <Route path ="/readmore/:id" component={Readmore}/>          
+              <Route path ={"/readmore/:id"} component={Readmore}/>          
           </nav>        
         </Router>        
       </div>        

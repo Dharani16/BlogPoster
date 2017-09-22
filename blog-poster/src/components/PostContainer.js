@@ -14,16 +14,14 @@ export class PostContainer extends React.Component{
         fetch(POST_URL)
         .then(results => results.json())
         .then(res =>{
-            console.log("Postcontainer : ",that.setState({data:res}))
             that.setState({data:res})
         })   
     }
-  
     
     singleBlog = (item) => {
         return <Posts itemData={item}/>
     }
- 
+    
     render(){
         var items =  this.state.data.map((item) => this.singleBlog(item));
         return(
