@@ -1,11 +1,11 @@
 import React from 'react';
+import {NewPostContainer} from './NewPostContainer';
 
 export class NewPost extends React.Component{
+
     render(){
         return(
-            <div className="container">
-                <h3>New blog Page !!</h3>
-            </div>
+            <NewPostContainer/>
         );
     }
 }

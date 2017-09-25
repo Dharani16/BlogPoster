@@ -1,7 +1,8 @@
 import React from 'react';
 import {CmtContainer} from './CmtContainer';
 
-const POST_URL = "http://jsonplaceholder.typicode.com/posts/";
+//const POST_URL = "http://jsonplaceholder.typicode.com/posts/";
+const POST_URL = "https://jsonprovider.herokuapp.com/posts/";
 
 export class Readmore extends React.Component{
 
@@ -26,12 +27,12 @@ export class Readmore extends React.Component{
             <div className="readMoreComponent">
                 <div className="container">
                     <div>
-                        <img src={"/images/blogBanner.jpg"}/>
+                        {/* <img src={"/images/blogBanner.jpg"}/> */}
                         <h3>{rmTitle}</h3>
                         <p>{rmContent} </p>
                         <hr/>     
                     </div>                
-                    <CmtContainer id={this.props.match.params.id}/>                       
+                    <CmtContainer id={this.props.match.params.id}/>  
                 </div>
             </div>
         )
