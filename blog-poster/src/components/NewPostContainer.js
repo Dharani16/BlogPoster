@@ -1,12 +1,13 @@
 import React from 'react';
-import{BrowserRouter as Router} from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 
 const POST_URL = 'https://jsonprovider.herokuapp.com/posts/';
 
 export class NewPostContainer extends React.Component {
-    constructor(){
-        super();
-        this.handleSubmit.bind(this);
+    constructor(props){
+        super(props);  
+        // this.redirectFunction=this.redirectFunction.bind(this);  
+        // this.state = {postRedirect:false} ;    
     }
 
     handleSubmit(e) {
@@ -20,39 +21,70 @@ export class NewPostContainer extends React.Component {
         fetch(POST_URL,{
             method:'POST',
             body:JSON.stringify(dat)
-        })
-        .then(function(body){
+        }).then(function(body){
             console.log("Body : ",body);
-            alert("Blog posted successfully !!");             
-        });
-        Router.browserHistory.push('/')  
+            console.log("Blog poster registerd successfully !!!");
+            alert("Blog posted successfully !!"); 
+            // <Redirect to='/about'/> 
+        })      
     }    
     
+    redirectFunction(){
+        console.log("redirectFunction console area !!");
+        //this.context.router.transitionTo('/about');
+        // console.log("browserHistory", this.context);
+        // this.context.router.transitionTo('/about'); 
+    }  
 
-
-    render(){
+    render(){     
         return(
-            <div className="container">
-	            <div className="col-lg-offset-1 col-lg-10">
-		            <h2>Create Blog</h2>
-                    <form id="formId" onSubmit={this.handleSubmit}>
-                        <div className="group">                           
-                            <label className="createBlogLabel">Blog title</label><br/>  
-                            <input type="text" name="blogPostTitle" id="blgTitle" className="createBlogTitle" ref="titleName" required />
-                        </div>
-                        <div className="group">
-                            <label className="createBlogLabel">Blog Message</label>
-                            <textarea name="message" className="createBlogMessage" id="blgPost" rows="10" cols="120" ref="contentMsg" required></textarea>
-                        </div>               
-                        <div className="group">
-                            <center> 
-                                <input type="submit" value="Submit Blog" id="btnCreate" className="btn btn-warning"/>
-                            </center>
-                        </div>
-                    </form>
-	            </div>	
+            <div>
+                <div className="container">
+                    <div className="col-lg-offset-1 col-lg-10">
+                        <h2>Create Blog</h2>
+                        <form id="formId" onSubmit={this.handleSubmit}>
+                            <div className="group">                           
+                                <label className="createBlogLabel">Blog title</label><br/>  
+                                <input type="text" name="blogPostTitle" id="blgTitle" className="createBlogTitle" ref="titleName" required />
+                            </div>
+                            <div className="group">
+                                <label className="createBlogLabel">Blog Message</label>
+                                <textarea name="message" className="createBlogMessage" id="blgPost" rows="10" cols="120" ref="contentMsg" required></textarea>
+                            </div>               
+                            <div className="group">
+                                <center> 
+                                    <input type="submit" value="Submit Blog" id="btnCreate" className="btn btn-warning"/>
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <input type="submit" value="Redirect" onClick={this.redirectFunction} id="btnCreate" className="btn btn-warning"/>
+                        
+                 {/* <div>
+                    if (this.set.postRedirect) {
+                    }
+                </div>  */}
             </div>
         )
-    }
+    }    
 }
 
+NewPostContainer.contextTypes = {
+    router: React.PropTypes.func.isRequired
+};
+
+
+/*
+   redirectFunction(){
+        console.log("redirectFunction console area !!");
+        //this.context.router.transitionTo('/about');
+        console.log("browserHistory",browserHistory);
+        browserHistory.push('/about');
+        //this.context.router.push('/about');
+        // this.props.history.push("/about");
+        //browserHistory.push('/about');
+        // <Redirect to = '/about' push/> 
+        //browserHistory.push('/about');
+    }  
+*/ 

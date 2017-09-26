@@ -27,12 +27,12 @@ export class Readmore extends React.Component{
             <div className="readMoreComponent">
                 <div className="container">
                     <div>
-                        {/* <img src={"/images/blogBanner.jpg"}/> */}
+                        <img src={require('../images/blogBanner.jpg')} className="blogBannerImage"/>
                         <h3>{rmTitle}</h3>
                         <p>{rmContent} </p>
                         <hr/>     
                     </div>                
-                    <CmtContainer id={this.props.match.params.id}/>  
+                    <CmtContainer id={this.props.match.params.id}/> 
                 </div>
             </div>
         )
