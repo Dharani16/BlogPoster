@@ -1,19 +1,21 @@
 import React from 'react';
 import { Redirect,Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const POST_URL = 'https://jsonprovider.herokuapp.com/posts/';
 
-export class NewPostContainer extends React.Component {
+class NewPostContainer extends React.Component {
     constructor(props){
         super(props);  
-        // this.redirectFunction=this.redirectFunction.bind(this);  
-        // this.state = {postRedirect:false} ;    
+        this.redirectFunction=this.redirectFunction.bind(this);  
+        // this.state = {postRedirect:false} ; 
+        //this.state = {postRedirect:false} ;    
     }
 
     handleSubmit(e) {
         let dat = {
             title:e.target.blogPostTitle.value,
-            body:e.target.message.value,
+            body:e.target.message.value,  
             userId:1
         }
         e.preventDefault();
@@ -30,7 +32,8 @@ export class NewPostContainer extends React.Component {
     }    
     
     redirectFunction(){
-        console.log("redirectFunction console area !!");
+        console.log("RedirectFunction console area !!");
+        this.props.router.push('/about');
         //this.context.router.transitionTo('/about');
         // console.log("browserHistory", this.context);
         // this.context.router.transitionTo('/about'); 
@@ -41,14 +44,13 @@ export class NewPostContainer extends React.Component {
             <div>
                 <div className="container">
                     <div className="col-lg-offset-1 col-lg-10">
-                        <h2>Create Blog</h2>
                         <form id="formId" onSubmit={this.handleSubmit}>
                             <div className="group">                           
                                 <label className="createBlogLabel">Blog title</label><br/>  
                                 <input type="text" name="blogPostTitle" id="blgTitle" className="createBlogTitle" ref="titleName" required />
                             </div>
                             <div className="group">
-                                <label className="createBlogLabel">Blog Message</label>
+                                <label className="createBlogLabel">Blog Message</label> <br/>
                                 <textarea name="message" className="createBlogMessage" id="blgPost" rows="10" cols="120" ref="contentMsg" required></textarea>
                             </div>               
                             <div className="group">
@@ -69,11 +71,11 @@ export class NewPostContainer extends React.Component {
         )
     }    
 }
+export default withRouter(NewPostContainer);
 
-NewPostContainer.contextTypes = {
-    router: React.PropTypes.func.isRequired
-};
-
+// NewPostContainer.contextTypes = {
+//     router: React.PropTypes.func.isRequired
+// };
 
 /*
    redirectFunction(){

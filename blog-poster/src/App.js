@@ -13,7 +13,6 @@ class App extends Component {
       <div className="container">
         <Router>                
           <nav className="navbar navbar-default">
-            <div className="container">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                   <span className="icon-bar"></span>
@@ -31,8 +30,6 @@ class App extends Component {
                   </ul> 
                 </div>                   
               </div>
-              </div>  
-              <hr/>
               <Route exact path ="/" component={PostContainer}/>
               <Route path ="/about" component={About}/>
               <Route path ="/contact" component={Contact}/>

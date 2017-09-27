@@ -1,5 +1,6 @@
 import React from 'react';
 import {CmtContainer} from './CmtContainer';
+import {CommentForm} from './CommentForm';
 
 //const POST_URL = "http://jsonplaceholder.typicode.com/posts/";
 const POST_URL = "https://jsonprovider.herokuapp.com/posts/";
@@ -31,7 +32,8 @@ export class Readmore extends React.Component{
                         <h3>{rmTitle}</h3>
                         <p>{rmContent} </p>
                         <hr/>     
-                    </div>                
+                    </div>     
+                    <CommentForm postId={this.props.match.params.id}/>           
                     <CmtContainer id={this.props.match.params.id}/> 
                 </div>
             </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import {Comment} from './Comment';
 
-const POST_URL = "http://jsonplaceholder.typicode.com/posts/";
-const COMMENT_FIRST = "/comments/";
+//const POST_URL = "http://jsonplaceholder.typicode.com/posts/";
+const POST_URL = "https://jsonprovider.herokuapp.com/posts/";
+const COMMENT_FIRST = "/comments/?sort=id+desc";
 
 export class CmtContainer extends React.Component{
 
@@ -21,18 +22,20 @@ export class CmtContainer extends React.Component{
             this.setState({cmtData:res})
         })              
     }
-
+    
     cmtDisplay = (item) => {
         return <Comment itemData={item}/>
     }
-
+    
     render(){
+       
         var cmtItems =  this.state.cmtData.map((item) => this.cmtDisplay(item));
         return(
             <div>
-                <h2>Comment display </h2>
+                <h1>Comment display </h1>
                 {cmtItems}
             </div>
         )
     }
 }
+

@@ -23,7 +23,7 @@ export class PostContainer extends React.Component{
     }
     
     render(){
-        var items =  this.state.data.map((item) => this.singleBlog(item));
+        var items =  this.state.data.slice(0,10).map((item) => this.singleBlog(item));
         return(
             <div>
                {items}

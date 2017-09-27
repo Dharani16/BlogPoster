@@ -10,13 +10,14 @@ export class Posts extends React.Component{
        
     render(){        
         return(            
-            <div>
+            <div className="blogDisplay">
                 <h4 className="blogHeading" >{this.props.itemData.title}</h4>
                 <p className="btReadMore">
                     <Link to = {"/readmore/" + this.props.itemData.id}> Read more </Link>                    
                 </p>                   
                 <hr/>
             </div>  
+            
         )
     }
 }
