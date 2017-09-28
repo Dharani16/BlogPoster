@@ -12,7 +12,7 @@ export class PostContainer extends React.Component{
     componentDidMount(){ 
         var that = this;
         fetch(POST_URL)
-        .then(results => results.json())
+        .then(results => results.json()) 
         .then(res =>{
             that.setState({data:res})
         })   
@@ -23,7 +23,7 @@ export class PostContainer extends React.Component{
     }
     
     render(){
-        var items =  this.state.data.slice(0,10).map((item) => this.singleBlog(item));
+        var items =  this.state.data.slice(0,5).map((item) => this.singleBlog(item));
         return(
             <div>
                {items}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import{BrowserRouter as Router,Route,Link} from 'react-router-dom';
+// import {browserHistory} from 'react-router'
 import {PostContainer} from './components/PostContainer';
 import {About} from './components/About';
 import {Contact} from './components/Contact';
@@ -36,7 +37,10 @@ class App extends Component {
               <Route path ="/newpost" component={NewPost}/>  
               <Route path ={"/readmore/:id"} component={Readmore}/> 
           </nav>        
-        </Router>        
+        </Router> 
+        <div className="footer">
+            <span className="footerText">copyright@2017</span>
+        </div>       
       </div>        
     );
   }

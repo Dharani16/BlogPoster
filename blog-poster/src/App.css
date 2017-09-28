@@ -26,15 +26,15 @@
   background-color: #FFFFFF;
 }
 .btReadMore{
-  padding: 10px;
-  background-color: #efecec;
+  background-color: #8dbad4;
   color: #320E0E;
   width: 100px;
   margin-left: 20px;
+  display: inline;
+  padding: 10px 10px 10px 10px;
 }
 .btReadMore:hover{
   cursor: pointer;
-  border:1px solid black;
 }
 .blogHeading{
   margin-left: 20px;
@@ -81,10 +81,10 @@
   width: 60px;
   height: 70px;
 }
-.cmtName,.cmtEmail,.cmtMessage{
+/* .cmtName,.cmtEmail,.cmtMessage{
   width: 500px;
   padding: 5px 0px 5px 0px;
-}
+} */
 .btn-warning{
   margin-top: 10px;
   width: 110px;
@@ -93,12 +93,17 @@
   line-height: 0px;
   display: block;
 }
-.cmtName{
+.commentTitleName{
   line-height: 0px;
   padding: 5px 10px 10px 5px;
   width: 100%;
-
-
+  font-size: 18px;
+  padding: 5px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #8dbad4;
+  background: transparent;
 }
 .cmtBody{
   line-height: 0px;
@@ -119,6 +124,25 @@
   color: #000000;
   font-size: 18px;
   position: initial; 
+}
+.btRead{
+  color: #FFFFFF;
+}
+.btRead:hover{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.footer{
+  background-color: #8dbad4;
+  text-align: center;
+  font-weight: bold;  
+  padding: 10px;
+}
+.footerText{
+  color: #FFFFFF;
+}
+.commentFormInput{
+  border:1px solid gray;
 }
 /*----------------------------------------------
 		contact form style

@@ -28,7 +28,7 @@ export class Readmore extends React.Component{
             <div className="readMoreComponent">
                 <div className="container">
                     <div>
-                        <img src={require('../images/blogBanner.jpg')} className="blogBannerImage"/>
+                        <img src={require('../images/blogBanner.jpg')} className="img-responsive blogBannerImage"/>
                         <h3>{rmTitle}</h3>
                         <p>{rmContent} </p>
                         <hr/>     
